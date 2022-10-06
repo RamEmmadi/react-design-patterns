@@ -2,6 +2,7 @@ import React from 'react';
 import Splitscreen from './layout/Splitscreen';
 import RegularList from './layout/RegularList';
 import Person from './layout/Person';
+import { Modal } from './layout/Modal';
 import { users } from './layout/userdata';
 
 const LeftComponent = () => {
@@ -16,7 +17,7 @@ const Patterns = () => {
   return (
     <>
       Patterns
-      <RegularList list={users} itemComponent={Person} resourceName="person" />
+      <Modal />
     </>
   );
 };

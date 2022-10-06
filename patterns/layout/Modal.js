@@ -29,6 +29,14 @@ const ModalBody = styled.div`
 export const Modal = () => {
   const [showModal, setShowModal] = React.useState(false);
 
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
+  const openModal = () => {
+    setShowModal(true);
+  };
+
   return (
     <>
       {showModal && (
