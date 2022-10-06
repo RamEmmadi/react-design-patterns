@@ -31,7 +31,14 @@ const Patterns = () => {
       <button onClick={openHandlr}>OPEN MODAL</button>
       <br />
       <button onClick={closeHandlr}>CLOSE MODAL</button>
-      <Modal ref={modalRefEle} />
+      <Modal ref={modalRefEle}>
+        <div>
+          <h3> Modal Title 1</h3>
+        </div>
+        <div>
+          <p> Modal Body 1</p>
+        </div>
+      </Modal>
     </>
   );
 };

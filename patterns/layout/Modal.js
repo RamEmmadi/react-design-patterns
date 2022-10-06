@@ -32,6 +32,8 @@ const ModalBody = styled.div`
 export const Modal = React.forwardRef((props, ref) => {
   const [showModal, setShowModal] = React.useState(false);
 
+  const [heading, body] = props.children;
+
   const closeModal = () => {
     setShowModal(false);
   };
@@ -51,10 +53,10 @@ export const Modal = React.forwardRef((props, ref) => {
         <ModalBackground onClick={() => setShowModal(false)}>
           <ModalContainer>
             <ModalHeading>
-              Modal Heading
+              {heading}
               <button onClick={() => setShowModal(false)}>HIDE</button>
             </ModalHeading>
-            <ModalBody>Modal Body</ModalBody>
+            <ModalBody>{body}</ModalBody>
           </ModalContainer>
         </ModalBackground>
       )}
