@@ -13,7 +13,10 @@ const Patterns = () => {
   return (
     <>
       Patterns
-      <Splitscreen left={LeftComponent} right={RightComponent} />
+      <Splitscreen>
+        <LeftComponent />
+        <RightComponent />
+      </Splitscreen>
     </>
   );
 };
