@@ -8,25 +8,27 @@ const ModalBackground = styled.div`
   left:0;
   right:0;
   overflow:auto;
-  background-color:rgba(0,0,0,0.5)
+  background-color:rgba(0,0,0,0.5);
+`;
+
+const ModalContainer = styled.div`
+  margin: 0 auto;
+  width: 70%;
 `;
 
 const ModalHeading = styled.div`
   background-color:white;
-  margin: 10% auto;
   padding: 20px;
-  width: 50%
-  borderBotttom: 2px solid;
+  border-bottom: 2px solid black;
 `;
 
 const ModalBody = styled.div`
   background-color:white;
-  margin: 10% auto;
   padding: 20px;
-  width: 50%
+  min-height: 40%;
 `;
 
-export const Modal = () => {
+export const Modal = React.forwardRef((props, ref) => {
   const [showModal, setShowModal] = React.useState(false);
 
   const closeModal = () => {
@@ -37,17 +39,24 @@ export const Modal = () => {
     setShowModal(true);
   };
 
+  React.useImperativeHandle(ref, () => ({
+    openModal: openModal,
+    closeModal: closeModal,
+  }));
+
   return (
     <>
       {showModal && (
         <ModalBackground onClick={() => setShowModal(false)}>
-          <ModalHeading>
-            Modal Heading
-            <button onClick={() => setShowModal(false)}>HIDE</button>
-          </ModalHeading>
-          <ModalBody>Modal Body</ModalBody>
+          <ModalContainer>
+            <ModalHeading>
+              Modal Heading
+              <button onClick={() => setShowModal(false)}>HIDE</button>
+            </ModalHeading>
+            <ModalBody>Modal Body</ModalBody>
+          </ModalContainer>
         </ModalBackground>
       )}
     </>
   );
-};
+});

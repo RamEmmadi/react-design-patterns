@@ -20,11 +20,17 @@ const Patterns = () => {
     modalRefEle.current.openModal();
   };
 
+  const closeHandlr = () => {
+    modalRefEle.current.closeModal();
+  };
+
   return (
     <>
       Patterns
       <br />
       <button onClick={openHandlr}>OPEN MODAL</button>
+      <br />
+      <button onClick={closeHandlr}>CLOSE MODAL</button>
       <Modal ref={modalRefEle} />
     </>
   );
