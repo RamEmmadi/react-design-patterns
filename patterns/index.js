@@ -1,5 +1,8 @@
 import React from 'react';
 import Splitscreen from './layout/Splitscreen';
+import RegularList from './layout/RegularList';
+import Person from './layout/Person';
+import { users } from './layout/userdata';
 
 const LeftComponent = () => {
   return <h1 style={{ background: 'green' }}>LEFT</h1>;
@@ -13,10 +16,7 @@ const Patterns = () => {
   return (
     <>
       Patterns
-      <Splitscreen>
-        <LeftComponent />
-        <RightComponent />
-      </Splitscreen>
+      <RegularList list={users} itemComponent={Person} resourceName="person" />
     </>
   );
 };
