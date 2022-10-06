@@ -14,10 +14,18 @@ const RightComponent = () => {
 };
 
 const Patterns = () => {
+  const modalRefEle = React.useRef();
+
+  const openHandlr = () => {
+    modalRefEle.current.openModal();
+  };
+
   return (
     <>
       Patterns
-      <Modal />
+      <br />
+      <button onClick={openHandlr}>OPEN MODAL</button>
+      <Modal ref={modalRefEle} />
     </>
   );
 };
