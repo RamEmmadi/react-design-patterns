@@ -4,11 +4,12 @@ import styled from 'styled-components';
 const ModalBackground = styled.div`
   position: fixed;
   width:100%;
-  height:100%;
+  height:100vh;
   left:0;
   right:0;
   overflow:auto;
   background-color:rgba(0,0,0,0.5);
+  z-index:1050;
 `;
 
 const ModalContainer = styled.div`
